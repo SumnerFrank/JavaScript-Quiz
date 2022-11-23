@@ -1,3 +1,9 @@
+//need to make button functional
+//need next question to appear immediately after answering
+//need to show if question was correct or incorrect 
+//need timer to count down AFTER start button is used 
+
+
 //connect js to start button 
 var score = 0;
 var startButton = document.querySelector("#startButton")
@@ -9,7 +15,14 @@ function startQuiz() {
 }
 
 startButton.addEventListener("click", startQuiz);
+nextButton.addEventListener("click", () => {
+    //needs to go to next question
+}
+)
 
+
+//FOR LOOP - function for question prompts, should continue through questions list
+//I dont know if this for loop works properly so that's something to figure out 
 for(var i=0; i < questions.length; i++); {
     var response = window.prompt(questions[i].prompt);
     if(response == questions[i].correct) {
@@ -20,6 +33,8 @@ for(var i=0; i < questions.length; i++); {
     }
 }
 
+
+//QUESTIONS INDEX
 var questions = [
     {
         message: "what is 1 + 1?", 
