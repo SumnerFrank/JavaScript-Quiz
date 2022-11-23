@@ -10,9 +10,7 @@ var startButton = document.querySelector("#startButton")
 
 
 function startQuiz() {
-//questions should start when button is clicked but how 
-
-
+alert("figure out how to make the questions appear here");
 }
 
 startButton.addEventListener("click", startQuiz); {
