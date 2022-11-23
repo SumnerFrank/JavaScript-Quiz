@@ -10,11 +10,15 @@ var startButton = document.querySelector("#startButton")
 
 
 function startQuiz() {
+//questions should start when button is clicked but how 
 
 
 }
 
-startButton.addEventListener("click", startQuiz);
+startButton.addEventListener("click", startQuiz); {
+
+};
+
 nextButton.addEventListener("click", () => {
     //needs to go to next question
 }
