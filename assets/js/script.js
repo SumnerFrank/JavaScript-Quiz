@@ -17,7 +17,8 @@ startButton.addEventListener("click", startQuiz); {
 };
 
 nextButton.addEventListener("click", () => {
-    //needs to go to next question
+    currentQuestionIndex++
+    setNextQuestion()
 }
 )
 
