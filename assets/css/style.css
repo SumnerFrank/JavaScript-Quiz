@@ -1,9 +1,19 @@
+body {
+    background-color: lightpink; 
+}
+
 .quizContainer {
     text-align: center;
     background-color: lightgreen;
     border-style: ridge;
     border-color: black;
     border-radius: 35px;
+}
+
+p {
+    background-color: white;
+    font-size: medium;
+    display: inline-flex;
 }
 
 #startButton {

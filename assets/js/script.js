@@ -7,12 +7,19 @@
 //connect js to start button 
 var score = 0;
 var startButton = document.querySelector("#startButton")
-var timer = document.querySelector("#startTime"); 
+var startingSeconds = 60;
+let time = startingSeconds;
+var countdownEl = document.getElementById("#countdown")
 var questionIndex = 0;
 
-function startQuiz() {
+function startTimer() {
+    startingSeconds = Math.floor(time);
+    countdownEl.innerHTML = $(time);
+    time--;
+}
 
-    alert("figure out how to make the questions appear here");
+function startQuiz() {
+    startTimer();
 }
 
 startButton.addEventListener("click", startQuiz); {
