@@ -1,0 +1,19 @@
+.quizContainer {
+    text-align: center;
+    background-color: lightgreen;
+    border-style: ridge;
+    border-color: black;
+    border-radius: 35px;
+}
+
+#startButton {
+    border-radius: 35px;
+}
+
+#nextButton {
+    border-radius: 35px;
+}
+
+.answerChoices {
+    border-radius: 35px;
+}

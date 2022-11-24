@@ -8,7 +8,6 @@
 var score = 0;
 var startButton = document.querySelector("#startButton")
 
-
 function startQuiz() {
 alert("figure out how to make the questions appear here");
 }
@@ -24,15 +23,8 @@ nextButton.addEventListener("click", () => {
 
 
 //FOR LOOP - function for question prompts, should continue through questions list
-//I dont know if this for loop works properly so that's something to figure out 
 for(var i=0; i < questions.length; i++); {
-    var response = window.prompt(questions[i].prompt);
-    if(response == questions[i].correct) {
-        score++;
-        alert("CORRECT!");
-    } else {
-        alert("incorrect :(");
-    }
+
 }
 
 
