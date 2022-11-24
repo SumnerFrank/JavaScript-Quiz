@@ -7,14 +7,19 @@
 //connect js to start button 
 var score = 0;
 var startButton = document.querySelector("#startButton")
+var timer = document.querySelector("#startTime"); 
+var questionIndex = 0;
 
 function startQuiz() {
-alert("figure out how to make the questions appear here");
+
+    alert("figure out how to make the questions appear here");
 }
 
 startButton.addEventListener("click", startQuiz); {
 
 };
+
+
 
 nextButton.addEventListener("click", () => {
     currentQuestionIndex++
@@ -29,7 +34,7 @@ for(var i=0; i < questions.length; i++); {
 }
 
 
-//QUESTIONS INDEX
+//QUESTION INDEX
 var questions = [
     {
         message: "what is 1 + 1?", 
