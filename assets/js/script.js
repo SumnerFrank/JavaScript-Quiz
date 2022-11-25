@@ -1,17 +1,16 @@
 //need to make button functional
 //need next question to appear immediately after answering
 //need to show if question was correct or incorrect 
-//need timer to count down AFTER start button is used 
-//setTimeout() - function for what happens after time runs out 
+//need start button to disappear after clicked 
 
 //connect js to start button 
-var score = 0;
+var score = timeLeft;
 var startButton = document.querySelector("#startButton")
 var timerEl = document.getElementById("countdown")
-var timeLeft = 60;
+var timeLeft = 59;
 
+//this function begins the countdown timer for the quiz
 function startTimer() {
-    
     var timeInterval = setInterval(function(){
         if (timeLeft > 1){
             timerEl.textContent = timeLeft + " seconds remaining";
@@ -20,9 +19,8 @@ function startTimer() {
             timerEl.textContent = timeLeft + "second remaining";
             timeLeft--;
         } else {
-            timerEl.textContent = timeLeft + "";
+            timerEl.textContent = "TIME IS UP!";
             clearInterval(timeInterval);
-
         }
     }, 1000);
     console.log("does this work")

@@ -2,11 +2,6 @@ body {
     background-color: salmon; 
 }
 
-
-
-
-
-
 .quizContainer {
     text-align: center;
     background-color: lightgreen;
@@ -23,6 +18,12 @@ p {
 
 #startButton {
     border-radius: 35px;
+}
+
+#countdown {
+    background-color: pink; 
+    border-style: solid;
+    border-color: black;
 }
 
 #nextButton {
