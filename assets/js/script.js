@@ -8,16 +8,16 @@
 var score = 0;
 var startButton = document.querySelector("#startButton")
 var timerEl = document.getElementById("countdown")
-
+var timeLeft = 60;
 
 function startTimer() {
-    var timeLeft = 60 + "seconds remaining";
+    
     var timeInterval = setInterval(function(){
         if (timeLeft > 1){
-            timerEl.textContent = timeLeft + " econds remaining";
+            timerEl.textContent = timeLeft + " seconds remaining";
             timeLeft--;
         } else if (timeLeft === 1){
-            timerEl.textContent = timer + "second remaining";
+            timerEl.textContent = timeLeft + "second remaining";
             timeLeft--;
         } else {
             timerEl.textContent = timeLeft + "";
