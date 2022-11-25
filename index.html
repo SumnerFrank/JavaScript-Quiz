@@ -1,4 +1,4 @@
-<!--Understand the pronlem-->
+<!--Understand the problem-->
 <!--break problems into smaller goals-->
 <!--convert small parts into functional code-->
 <!--debug errors, refactor/DRY code-->
@@ -17,7 +17,7 @@
 <body>
     <div class="timeRemaining">
         TIME REMAINING
-        <p id="countdown">0:60</p>
+        <p id="countdown">60</p>
     </div>
     <div class="quizContainer" id="quizBox">
         <div class="intro" id="quizIntro"> 
@@ -26,7 +26,7 @@
                 be sure to keep an eye on the clock!</h3>
             <h4>Press Start To Start The Quiz!</h4>
         </div>
-        <div id="answerButtons">
+        <div id="answerButtons" class="hide">
             <button class="answerChoices">Choice 1</button>
             <button class="answerChoices">Choice 2</button>
             <button class="answerChoices">Choice 3</button>
@@ -35,7 +35,7 @@
         </div>
         <div class="commands">
             <button id="startButton">START</button>
-            <button id="nextButton">NEXT</button>    
+            <button id="nextButton" class="hide">NEXT</button>    
         </div>
         <div class="highScores">
             <a href="/scores.html">High Scores</a>
