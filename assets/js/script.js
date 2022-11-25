@@ -22,15 +22,12 @@ function startTimer() {
         } else {
             timerEl.textContent = timeLeft + "";
             clearInterval(timeInterval);
-            displayMessage();
 
         }
     }, 1000);
     console.log("does this work")
 
 }
-
-
 
 function startQuiz() {
     startTimer();
