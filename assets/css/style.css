@@ -16,20 +16,17 @@ p {
     display: inline-flex;
 }
 
-#startButton {
+button {
     border-radius: 35px;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 #countdown {
     background-color: pink; 
     border-style: solid;
     border-color: black;
+    
 }
-
-#nextButton {
-    border-radius: 35px;
-}
-
-.answerChoices {
-    border-radius: 35px;
-} 
