@@ -7,14 +7,30 @@
 //connect js to start button 
 var score = 0;
 var startButton = document.querySelector("#startButton")
-var timer = 60;
+var timerEl = document.getElementById("countdown")
 
 
 function startTimer() {
+    var timeLeft = 60 + "seconds remaining";
+    var timeInterval = setInterval(function(){
+        if (timeLeft > 1){
+            timerEl.textContent = timeLeft + " econds remaining";
+            timeLeft--;
+        } else if (timeLeft === 1){
+            timerEl.textContent = timer + "second remaining";
+            timeLeft--;
+        } else {
+            timerEl.textContent = timeLeft + "";
+            clearInterval(timeInterval);
+            displayMessage();
+
+        }
+    }, 1000);
     console.log("does this work")
 
-
 }
+
+
 
 function startQuiz() {
     startTimer();
