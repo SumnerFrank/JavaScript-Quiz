@@ -25,6 +25,9 @@ function startTimer() {
     }, 1000);
     console.log("does this work")
 
+var answerButtons = document.getElementById("#answerButtons");
+answerButtons.style.display='hide';
+
 }
 
 function startQuiz() {
