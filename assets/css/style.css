@@ -27,6 +27,13 @@ button:hover {
 #countdown {
     background-color: pink; 
     border-style: solid;
-    border-color: black;
-    
+    border-color: black;   
+}
+
+#answerButtons {
+    display: none;
+}
+
+#nextButton {
+    display: none;
 }

@@ -6,6 +6,8 @@
 //connect js to start button 
 var score = timeLeft;
 var startButton = document.querySelector("#startButton")
+var answerButtons = document.getElementById("#answerButtons");
+var nextButton = document.getElementById("#nextButton");
 var timerEl = document.getElementById("countdown")
 var timeLeft = 59;
 
@@ -25,13 +27,15 @@ function startTimer() {
     }, 1000);
     console.log("does this work")
 
-var answerButtons = document.getElementById("#answerButtons");
-answerButtons.style.display='hide';
+
 
 }
 
 function startQuiz() {
     startTimer();
+    startButton.classList.add("none")
+    nextButton.classList.remove("none")
+    answerButtons.classList.remove("none")
 }
 
 startButton.addEventListener("click", startQuiz); {
