@@ -1,6 +1,6 @@
 //timer starts when start button is clicked [x]
 //question presented when start button is clicked [ ]
-//next aquestion prompts when question is answered [ ]
+//next question prompts when question is answered [ ]
 //deduct points when incorrect answer is selected [ ]
 //game ends when timer ends OR all q's answered [ ]
 //score can be saved along with initials [ ]
@@ -9,14 +9,20 @@
 //how to randomize question/answer content 
 //how to store data locally 
 
-//connect js to start button 
+
 var score = timeLeft;
 var startButton = document.getElementById("startButton")
 var answerButtons = document.getElementById("answerButtons");
 var nextButton = document.getElementById("nextButton");
 var timerEl = document.getElementById("countdown")
-var questions = document.querySelector("#questionsBox")
 var quizIntro = document.getElementById("quizIntro")
+var questionEl = document.getElementById("questionBox")
+var index = 0;
+var choice1 = document.getElementById("Choice1")
+var choice2 = document.getElementById("Choice2")
+var choice3 = document.getElementById("Choice3")
+var choice4 = document.getElementById("Choice4")
+
 //using 59 seconds to account for 1 second time lapse from start button 
 var timeLeft = 59;
 
@@ -42,31 +48,30 @@ function startTimer() {
 }
 
 function startQuiz() {
-    startTimer();
+    questionEl.innerHTML = questions[index].message;
+    choice1.innerHTML = questions[index].choices[0];
+    choice2.innerHTML = questions[index].choices[1];
+    choice3.innerHTML = questions[index].choices[2];
+    choice4.innerHTML = questions[index].choices[3];
     nextButton.style.display = "inline";
     answerButtons.style.display = "inline";
     startButton.style.display = "none";
     quizIntro.style.display = "none";
+    
 }
 
 function nextQuestion() {
-    console.log("does this work")
+    index = index + 1;
+    console.log(index)
+    startQuiz()
 }
 
 startButton.addEventListener("click", startQuiz); {
 }
-
+startButton.addEventListener("click", startTimer); {
+}
 nextButton.addEventListener("click", nextQuestion); {
 }
-
-
-
-
-//FOR LOOP - function for question prompts, should continue through questions list
-for(var i=0; i < 5; i++); {
-//tried to use i < questions.length, did not work, not sure why 
-}
-
 
 //QUESTION INDEX
 var questions = [
