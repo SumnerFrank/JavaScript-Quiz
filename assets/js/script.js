@@ -1,7 +1,5 @@
-//need to make button functional
-//need next question to appear immediately after answering
-//need to show if question was correct or incorrect 
-//need start button to disappear after clicked 
+//how to get questions & answer options to appear
+//how to randomize question/answer content 
 
 //connect js to start button 
 var score = timeLeft;
@@ -10,6 +8,7 @@ var answerButtons = document.getElementById("answerButtons");
 var nextButton = document.getElementById("nextButton");
 var timerEl = document.getElementById("countdown")
 var questions = document.querySelector("#questionsBox")
+var quizIntro = document.getElementById("quizIntro")
 //using 59 seconds to account for 1 second time lapse from start button 
 var timeLeft = 59;
 
@@ -39,14 +38,19 @@ function startQuiz() {
     nextButton.style.display = "inline";
     answerButtons.style.display = "inline";
     startButton.style.display = "none";
-    
+    quizIntro.style.display = "none";
+}
+
+function nextQuestion() {
     console.log("does this work")
 }
 
 startButton.addEventListener("click", startQuiz); {
+}
 
-};
-
+nextButton.addEventListener("click", nextQuestion); {
+    
+}
 
 
 
