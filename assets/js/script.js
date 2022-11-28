@@ -1,7 +1,7 @@
 //timer starts when start button is clicked [x]
-//question presented when start button is clicked [ ]
-//next question prompts when question is answered [ ]
-//deduct points when incorrect answer is selected [ ]
+//question presented when start button is clicked [x]
+//next question prompts when question is answered [x]
+//deduct points when incorrect answer is selected [x]
 //game ends when timer ends OR all q's answered [ ]
 //score can be saved along with initials [ ]
 
@@ -13,6 +13,7 @@
 var score = timeLeft;
 var startButton = document.getElementById("startButton")
 var answerButtons = document.getElementById("answerButtons");
+var answerChoices = document.querySelectorAll(".answerChoices")
 var nextButton = document.getElementById("nextButton");
 var timerEl = document.getElementById("countdown")
 var quizIntro = document.getElementById("quizIntro")
@@ -28,7 +29,6 @@ var timeLeft = 59;
 
 //dynamic style, attempting to remove buttons until after click start
 answerButtons.style.display = "none";
-nextButton.style.display = "none";
 
 
 //this function begins the countdown timer for the quiz
@@ -53,7 +53,6 @@ function startQuiz() {
     choice2.innerHTML = questions[index].choices[1];
     choice3.innerHTML = questions[index].choices[2];
     choice4.innerHTML = questions[index].choices[3];
-    nextButton.style.display = "inline";
     answerButtons.style.display = "inline";
     startButton.style.display = "none";
     quizIntro.style.display = "none";
@@ -61,8 +60,16 @@ function startQuiz() {
 }
 
 function nextQuestion() {
+    console.log(questions[index].correct)
+    if(this.innerHTML == questions[index].correct) {
+        console.log("correct")
+        //make correct show on screen
+    } else {
+        console.log("incorrect")
+        //make incorrect show on screen
+        timeLeft = timeLeft - 5;
+    }
     index = index + 1;
-    console.log(index)
     startQuiz()
 }
 
@@ -70,7 +77,9 @@ startButton.addEventListener("click", startQuiz); {
 }
 startButton.addEventListener("click", startTimer); {
 }
-nextButton.addEventListener("click", nextQuestion); {
+
+for(var i = 0; i < answerChoices.length; i++) {
+    answerChoices[i].addEventListener("click", nextQuestion)
 }
 
 //QUESTION INDEX
