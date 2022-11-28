@@ -5,11 +5,18 @@
 
 //connect js to start button 
 var score = timeLeft;
-var startButton = document.querySelector("#startButton")
-var answerButtons = document.getElementById("#answerButtons");
-var nextButton = document.getElementById("#nextButton");
+var startButton = document.getElementById("startButton")
+var answerButtons = document.getElementById("answerButtons");
+var nextButton = document.getElementById("nextButton");
 var timerEl = document.getElementById("countdown")
+var questions = document.querySelector("#questionsBox")
+//using 59 seconds to account for 1 second time lapse from start button 
 var timeLeft = 59;
+
+//dynamic style, attempting to remove buttons until after click start
+answerButtons.style.display = "none";
+nextButton.style.display = "none";
+
 
 //this function begins the countdown timer for the quiz
 function startTimer() {
@@ -25,17 +32,15 @@ function startTimer() {
             clearInterval(timeInterval);
         }
     }, 1000);
-    console.log("does this work")
-
-
-
 }
 
 function startQuiz() {
     startTimer();
-    startButton.classList.add("none")
-    nextButton.classList.remove("none")
-    answerButtons.classList.remove("none")
+    nextButton.style.display = "inline";
+    answerButtons.style.display = "inline";
+    startButton.style.display = "none";
+    
+    console.log("does this work")
 }
 
 startButton.addEventListener("click", startQuiz); {
@@ -43,11 +48,7 @@ startButton.addEventListener("click", startQuiz); {
 };
 
 
-nextButton.addEventListener("click", () => {
-    currentQuestionIndex++
-    setNextQuestion()
-}
-)
+
 
 
 //FOR LOOP - function for question prompts, should continue through questions list
@@ -80,11 +81,6 @@ var questions = [
     },
     {
         message: "what is 3(1 + 1)?", 
-        choices: [2, 4, 6, 8], 
-        correct: 6
-    }, 
-    {
-        message: "what is 2(1 + 2)?", 
         choices: [2, 4, 6, 8], 
         correct: 6
     }, 
