@@ -1,5 +1,13 @@
+//timer starts when start button is clicked [x]
+//question presented when start button is clicked [ ]
+//next aquestion prompts when question is answered [ ]
+//deduct points when incorrect answer is selected [ ]
+//game ends when timer ends OR all q's answered [ ]
+//score can be saved along with initials [ ]
+
 //how to get questions & answer options to appear
 //how to randomize question/answer content 
+//how to store data locally 
 
 //connect js to start button 
 var score = timeLeft;
