@@ -49,7 +49,6 @@ startButton.addEventListener("click", startQuiz); {
 }
 
 nextButton.addEventListener("click", nextQuestion); {
-    
 }
 
 
