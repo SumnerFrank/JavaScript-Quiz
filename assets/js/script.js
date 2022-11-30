@@ -47,6 +47,7 @@ function startTimer() {
             questionEl.style.display = "none";
             answerButtons.style.display = "none";
             yourScore.style.display = "inline";
+            
         }
     }, 1000);
 }
