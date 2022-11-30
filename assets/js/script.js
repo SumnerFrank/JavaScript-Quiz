@@ -5,8 +5,6 @@
 //game ends when timer ends OR all q's answered [ ]
 //score can be saved along with initials [ ]
 
-//how to get questions & answer options to appear
-//how to randomize question/answer content 
 //how to store data locally 
 
 
@@ -18,11 +16,13 @@ var nextButton = document.getElementById("nextButton");
 var timerEl = document.getElementById("countdown")
 var quizIntro = document.getElementById("quizIntro")
 var questionEl = document.getElementById("questionBox")
+var highScores = document.getElementById("highScores")
 var index = 0;
 var choice1 = document.getElementById("Choice1")
 var choice2 = document.getElementById("Choice2")
 var choice3 = document.getElementById("Choice3")
 var choice4 = document.getElementById("Choice4")
+var yourScore = document.getElementById("yourScore");
 
 //using 59 seconds to account for 1 second time lapse from start button 
 var timeLeft = 59;
@@ -43,6 +43,10 @@ function startTimer() {
         } else {
             timerEl.textContent = "TIME IS UP!";
             clearInterval(timeInterval);
+            highScores.style.display = "inline";
+            questionEl.style.display = "none";
+            answerButtons.style.display = "none";
+            yourScore.style.display = "inline";
         }
     }, 1000);
 }
@@ -56,16 +60,17 @@ function startQuiz() {
     answerButtons.style.display = "inline";
     startButton.style.display = "none";
     quizIntro.style.display = "none";
+    highScores.style.display = "none";
     
 }
 
 function nextQuestion() {
     console.log(questions[index].correct)
     if(this.innerHTML == questions[index].correct) {
-        console.log("correct")
+        alert("GOOD JOB!")
         //make correct show on screen
     } else {
-        console.log("incorrect")
+        alert("sorry, not correct")
         //make incorrect show on screen
         timeLeft = timeLeft - 5;
     }
@@ -85,19 +90,24 @@ for(var i = 0; i < answerChoices.length; i++) {
 //QUESTION INDEX
 var questions = [
     {
-        message: "what is 1 + 1?", 
-        choices: [2, 4, 6, 8], 
-        correct: 2
+        message: "What does CSS stand For?", 
+        choices: ["Cascading Style Sheet", 
+        "Common Stance Style", 
+        "Curriculum Style Standard",
+         "Cursed Sinister Stepson"], 
+        correct: "Cascading Style Sheet"
     }, 
     {
-        message: "what is 2 + 2?", 
-        choices: [2, 4, 6, 8], 
-        correct: 4
+        message: "What does JavaScript do? ", 
+        choices: ["pours a cup of coffee", 
+        "adds function to webpage", 
+        "nothing", "hides webpage"], 
+        correct: "adds function to webpage"
     },
     {
-        message: "what is 2(1 + 1)?", 
-        choices: [2, 4, 6, 8], 
-        correct: 4
+        message: "What is the proper way to close an HTML element", 
+        choices: ["/", "#", "!", "("], 
+        correct: "/"
     }, 
     {
         message: "what is 2(2 + 2)?", 
