@@ -43,11 +43,14 @@ function startTimer() {
         } else {
             timerEl.textContent = "TIME IS UP!";
             clearInterval(timeInterval);
+            //timer hits zero and screen should change to final score and reveal 
+            //link to high scores
+            //need to add form for high score input 
             highScores.style.display = "inline";
             questionEl.style.display = "none";
             answerButtons.style.display = "none";
             yourScore.style.display = "inline";
-            
+
         }
     }, 1000);
 }
