@@ -2,7 +2,7 @@
 //question presented when start button is clicked [x]
 //next question prompts when question is answered [x]
 //deduct points when incorrect answer is selected [x]
-//game ends when timer ends OR all q's answered [ ]
+//game ends when timer ends OR all q's answered [/]
 //score can be saved along with initials [ ]
 
 //how to store data locally 
@@ -80,6 +80,11 @@ function nextQuestion() {
     }
     index = index + 1;
     startQuiz()
+}
+
+
+function endGame() {
+
 }
 
 startButton.addEventListener("click", startQuiz); {
