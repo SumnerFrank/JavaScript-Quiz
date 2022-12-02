@@ -2,7 +2,7 @@
 //question presented when start button is clicked [x]
 //next question prompts when question is answered [x]
 //deduct points when incorrect answer is selected [x]
-//game ends when timer ends OR all q's answered [/]
+//game ends when timer ends OR all q's answered [x]
 //score can be saved along with initials [ ]
 
 //how to store data locally 
@@ -79,12 +79,17 @@ function nextQuestion() {
         timeLeft = timeLeft - 5;
     }
     index = index + 1;
+    console.log(index);
+    if(index === questions.length){
+        window.prompt("GAME OVER! Enter Your Name Here");
+        endGame();
+    }
     startQuiz()
 }
 
 
 function endGame() {
-
+    yourScore;
 }
 
 startButton.addEventListener("click", startQuiz); {
