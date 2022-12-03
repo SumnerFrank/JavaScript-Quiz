@@ -38,6 +38,10 @@ button:hover {
     margin-top: 50px;
 }
 
+#yourScore {
+    margin: 50px 10px 10px;
+}
+
 #highScores {
     margin: 50px 10px 10px;
 }

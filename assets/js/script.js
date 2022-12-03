@@ -42,6 +42,8 @@ function startTimer() {
             timeLeft--;
         } else {
             timerEl.textContent = "TIME IS UP!";
+            window.prompt("GAME OVER! Enter Your Name Here");
+            endGame();
             clearInterval(timeInterval);
             //timer hits zero and screen should change to final score and reveal 
             //link to high scores
@@ -89,7 +91,8 @@ function nextQuestion() {
 
 
 function endGame() {
-    yourScore;
+    yourScore.innerHTML = "Your Score: " + timeLeft;
+    //need timer to stop and score to be stored 
 }
 
 startButton.addEventListener("click", startQuiz); {
