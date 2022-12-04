@@ -42,7 +42,8 @@ function startTimer() {
             timeLeft--;
         } else {
             timerEl.textContent = "TIME IS UP!";
-            window.prompt("GAME OVER! Enter Your Name Here");
+            setName = window.prompt("GAME OVER! Enter Your Name Here");
+            var setName = localStorage.setItem("setName", setName)
             endGame();
             clearInterval(timeInterval);
             //timer hits zero and screen should change to final score and reveal 
@@ -70,6 +71,8 @@ function startQuiz() {
     
 }
 
+
+
 function nextQuestion() {
     console.log(questions[index].correct)
     if(this.innerHTML == questions[index].correct) {
@@ -83,7 +86,8 @@ function nextQuestion() {
     index = index + 1;
     console.log(index);
     if(index === questions.length){
-        window.prompt("GAME OVER! Enter Your Name Here");
+        setName = window.prompt("GAME OVER! Enter Your Name Here");
+        var setName = localStorage.setItem("setName", setName)
         endGame();
     }
     startQuiz()
@@ -93,6 +97,8 @@ function nextQuestion() {
 function endGame() {
     yourScore.innerHTML = "Your Score: " + timeLeft;
     //need timer to stop and score to be stored 
+    var setScore = localStorage.setItem("setScore", timeLeft);
+    setScore();
 }
 
 startButton.addEventListener("click", startQuiz); {
