@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>JavaScript Quiz</title>
 </head>
+
 <body>
     <header>
         <h1>JavaScript Quiz</h1>
         <div id="highScores">
             <a href="./scores.html">High Scores</a>
         </div>
+        <h2>Answer the questions before the time runs out!</h2>
+        <h3>Your score will be penalized for wrong answers!</h3>
+        <div class="timer">
+            <p>TIME:<span id="time">60</span></p>
+        </div>
         <div class="start">
             <button id="startButton">START</button>  
-        </div>
-        <div id="yourScore">
         </div>
     </header>
 
@@ -34,26 +38,4 @@
     </div>
 <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
-
-
-
-
-    <!-- <div class="timeRemaining">
-        <p id="countdown">YOU HAVE ONE MINUTE</p>
-    </div>
-    <div class="quizContainer" id="quizBox">
-        <div class="intro" id="quizIntro"> 
-            <h2>WELCOME!</h2>
-            <h3>This quiz will be 5 questions long<br>
-                be sure to keep an eye on the clock!</h3>
-            <h4>Press Start To Start The Quiz!</h4>
-        </div>
-        <div id="questionBox"></div>
-        <div id="answerButtons">
-            <button class="answerChoices" id="Choice1">Choice 1</button>
-            <button class="answerChoices" id="Choice2">Choice 2</button>
-            <button class="answerChoices" id="Choice3">Choice 3</button>
-            <button class="answerChoices" id="Choice4">Choice 4</button>
-        </div> -->

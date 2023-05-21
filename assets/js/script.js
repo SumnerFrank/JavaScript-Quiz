@@ -1,116 +1,3 @@
-//timer starts when start button is clicked [x]
-//question presented when start button is clicked [x]
-//next question prompts when question is answered [x]
-//deduct points when incorrect answer is selected [x]
-//game ends when timer ends OR all q's answered [x]
-//score can be saved along with initials [ ]
-
-//how to store data locally 
-
-
-var score = timeLeft;
-var startButton = document.getElementById("startButton")
-var answerButtons = document.getElementById("answerButtons");
-var answerChoices = document.querySelectorAll(".answerChoices")
-var nextButton = document.getElementById("nextButton");
-var timerEl = document.getElementById("countdown")
-var quizIntro = document.getElementById("quizIntro")
-var questionEl = document.getElementById("questionBox")
-var highScores = document.getElementById("highScores")
-var index = 0;
-var choice1 = document.getElementById("Choice1")
-var choice2 = document.getElementById("Choice2")
-var choice3 = document.getElementById("Choice3")
-var choice4 = document.getElementById("Choice4")
-var yourScore = document.getElementById("yourScore");
-
-//using 59 seconds to account for 1 second time lapse from start button 
-var timeLeft = 59;
-
-//dynamic style, attempting to remove buttons until after click start
-answerButtons.style.display = "none";
-
-
-//this function begins the countdown timer for the quiz
-function startTimer() {
-    var timeInterval = setInterval(function(){
-        if (timeLeft > 1){
-            timerEl.textContent = timeLeft + " seconds remaining";
-            timeLeft--;
-        } else if (timeLeft === 1){
-            timerEl.textContent = timeLeft + "second remaining";
-            timeLeft--;
-        } else {
-            timerEl.textContent = "TIME IS UP!";
-            setName = window.prompt("GAME OVER! Enter Your Name Here");
-            var setName = localStorage.setItem("setName", setName)
-            endGame();
-            clearInterval(timeInterval);
-            //timer hits zero and screen should change to final score and reveal 
-            //link to high scores
-            //need to add form for high score input 
-            highScores.style.display = "inline";
-            questionEl.style.display = "none";
-            answerButtons.style.display = "none";
-            yourScore.style.display = "inline";
-
-        }
-    }, 1000);
-}
-
-function startQuiz() {
-    questionEl.innerHTML = questions[index].message;
-    choice1.innerHTML = questions[index].choices[0];
-    choice2.innerHTML = questions[index].choices[1];
-    choice3.innerHTML = questions[index].choices[2];
-    choice4.innerHTML = questions[index].choices[3];
-    answerButtons.style.display = "inline";
-    startButton.style.display = "none";
-    quizIntro.style.display = "none";
-    highScores.style.display = "none";
-    
-}
-
-
-
-function nextQuestion() {
-    console.log(questions[index].correct)
-    if(this.innerHTML == questions[index].correct) {
-        alert("GOOD JOB!")
-        //make correct show on screen
-    } else {
-        alert("sorry, not correct")
-        //make incorrect show on screen
-        timeLeft = timeLeft - 5;
-    }
-    index = index + 1;
-    console.log(index);
-    if(index === questions.length){
-        setName = window.prompt("GAME OVER! Enter Your Name Here");
-        var setName = localStorage.setItem("setName", setName)
-        endGame();
-    }
-    startQuiz()
-}
-
-
-function endGame() {
-    yourScore.innerHTML = "Your Score: " + timeLeft;
-    //need timer to stop and score to be stored 
-    var setScore = localStorage.setItem("setScore", timeLeft);
-    setScore();
-}
-
-startButton.addEventListener("click", startQuiz); {
-}
-startButton.addEventListener("click", startTimer); {
-}
-
-for(var i = 0; i < answerChoices.length; i++) {
-    answerChoices[i].addEventListener("click", nextQuestion)
-}
-
-//QUESTION INDEX
 var questions = [
     {
         message: "What does CSS stand For?", 
@@ -143,3 +30,27 @@ var questions = [
         correct: 6
     }, 
 ]
+
+
+var totalScores = [];
+var questionIndex = 0;
+var startingTime = 60;
+var time = document.getElementById("time");
+var start = document.querySelector(".startButton");
+var questionTitle = document.querySelector("#question-title");
+var questionOptions = document.getElementById("question-options")
+var questionResponse = document.getElementById("question-response")
+var questionDisplay = document.querySelector(".question-display")
+var interval
+var finalScore = 0
+var finishedSection = document.getElementById("finished-section")
+var finishedScore = document.getElementById("finished-score")
+var playerInitials = document.getElementById("player-initials")
+var insertInstructions = document.getElementById("insert-instructions")
+
+
+
+
+
+
+
