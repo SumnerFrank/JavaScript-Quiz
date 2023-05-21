@@ -4,11 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>JavaScript Quiz</title>
 </head>
 <body>
-    <div class="timeRemaining">
+    <header>
+        <h1>JavaScript Quiz</h1>
+        <div id="highScores">
+            <a href="./scores.html">High Scores</a>
+        </div>
+        <div class="start">
+            <button id="startButton">START</button>  
+        </div>
+        <div id="yourScore">
+        </div>
+    </header>
+
+    <section class="question-display">
+        <h2 id="question-title"></h2>
+        <ol id="question-options"></ol>
+        <div id="question-response"></div>
+    </section>
+    <section id="results-display">
+        <h2 id="results-score"></h2>
+        <h3 id="instructions"></h3>
+        <input id="player-initials" />
+    </section>
+
+    </div>
+<script src="./assets/js/script.js"></script>
+</body>
+
+</html>
+
+
+
+
+    <!-- <div class="timeRemaining">
         <p id="countdown">YOU HAVE ONE MINUTE</p>
     </div>
     <div class="quizContainer" id="quizBox">
@@ -24,19 +56,4 @@
             <button class="answerChoices" id="Choice2">Choice 2</button>
             <button class="answerChoices" id="Choice3">Choice 3</button>
             <button class="answerChoices" id="Choice4">Choice 4</button>
-        </div>
-        <div class="commands">
-            <button id="startButton">START</button>  
-        </div>
-        <div id="yourScore">
-        </div>
-        <br>
-        <div id="highScores">
-            <a href="/scores.html">High Scores</a>
-        </div>
-
-    </div>
-<script src="./assets/js/script.js"></script>
-</body>
-
-</html>
+        </div> -->
