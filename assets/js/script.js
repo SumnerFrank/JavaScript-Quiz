@@ -54,7 +54,7 @@ const pageStart = () => {
 
 const startQuiz = () => {
     interval = setInterval(() => {
-        startingTime--;
+        startingTime--
         time.textContent = startingTime
         if(startingTime < 1) {
             endGame();
@@ -69,7 +69,7 @@ const displayQuestion = () => {
     document.getElementsByTagName('h2')[0].style.display = 'none';
     document.getElementsByTagName('h3')[0].style.display = 'none';
 
-    const showQuestion = question[questionIndex];
+    const showQuestion = questions[questionIndex];
     questionTitle.textContent = showQuestion.question;
     questionOptions.innerHTML = '';
 
