@@ -42,14 +42,14 @@ const questionOptions = document.getElementById("question-options")
 const questionResponse = document.getElementById("question-response")
 const questionDisplay = document.querySelector(".question-display")
 var interval
-const finalScore = 0
+let finalScore = 0
 const finishedSection = document.getElementById("results-score")
 const finishedScore = document.getElementById("finished-score")
 const playerInitials = document.getElementById("player-initials")
 const instructions = document.getElementById("instructions")
 
 const pageStart = () => {
-    start.onClick = startQuiz
+    start.onclick = startQuiz
 }
 
 const startQuiz = () => {
@@ -77,7 +77,7 @@ const displayQuestion = () => {
         const questionButton = document.createElement('button');
         questionButton.value = option;
         questionButton.textContent = option;
-        questionButton.onClick = verifyAnswer;
+        questionButton.onclick = verifyAnswer;
         questionOptions.appendChild(questionButton)
     });
     if(questions.length < 1) {
@@ -86,11 +86,11 @@ const displayQuestion = () => {
 };
 
 const verifyAnswer = () => {
-    if(this.value === questions[questionIndex].answwer) {
+    if(this.value === questions[questionIndex].answer) {
         questionResponse.textContent = 'correct!'
         setTimeout(() => {
             questionResponse.textContent = '';
-            if(questionIndex === questions.length || time === 0) {
+            if(questionIndex == questions.length || time == 0) {
                 endGame();
             } else {
                 displayQuestion();
@@ -99,7 +99,7 @@ const verifyAnswer = () => {
     } else {
         questionResponse.textContent = 'sorry, incorrect';
         setTimeout(() => {
-            questionResponse.textContent.textContent = '';
+            questionResponse.textContent = '';
             if(questionIndex === questions.length || time === 0) {
                 endGame();
             } else {
@@ -122,7 +122,7 @@ const endGame = () => {
     const submit = document.createElement('button');
     submit.textContent = 'Submit Score';
     finishedSection.appendChild(submit);
-    submit.onClick = () => {
+    submit.onclick = () => {
         const initials = playerInitials.value
         const userScore = {
             initials: initials,
@@ -137,4 +137,4 @@ const endGame = () => {
 }
 
 
-pageStart();
+pageStart()
