@@ -90,10 +90,10 @@ const displayQuestion = () => {
 
 const verifyAnswer = (selectedOption) => {
     if(selectedOption.value === questions[questionIndex].answer) {
-        questionResponse.textContent = 'correct!'
+        questionResponse.textContent = 'LETS GO!!'
         setTimeout(() => {
             questionResponse.textContent = '';
-            if(questionIndex == questions.length || time == 0) {
+            if(questionIndex >= questions.length || time == 0) {
                 endGame();
             } else {
                 displayQuestion();
