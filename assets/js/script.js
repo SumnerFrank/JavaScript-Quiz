@@ -77,7 +77,10 @@ const displayQuestion = () => {
         const questionButton = document.createElement('button');
         questionButton.value = option;
         questionButton.textContent = option;
-        questionButton.onclick = verifyAnswer;
+        // questionButton.onclick = verifyAnswer;
+        questionButton.addEventListener('click', function(){
+            verifyAnswer(this);
+        })
         questionOptions.appendChild(questionButton)
     });
     if(questions.length < 1) {
@@ -85,8 +88,8 @@ const displayQuestion = () => {
     }
 };
 
-const verifyAnswer = () => {
-    if(this.value === questions[questionIndex].answer) {
+const verifyAnswer = (selectedOption) => {
+    if(selectedOption.value === questions[questionIndex].answer) {
         questionResponse.textContent = 'correct!'
         setTimeout(() => {
             questionResponse.textContent = '';
@@ -108,7 +111,7 @@ const verifyAnswer = () => {
         }, 1000);
         startingTime = startingTime -10;
         time.textContent = startingTime;
-    } questionIndex++;
+    } questionIndex++
 };
 
 const endGame = () => {
