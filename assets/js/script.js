@@ -41,7 +41,6 @@ const questionTitle = document.querySelector("#question-title");
 const questionOptions = document.getElementById("question-options")
 const questionResponse = document.getElementById("question-response")
 const questionDisplay = document.querySelector(".question-display")
-var interval
 let finalScore = 0
 const finishedSection = document.getElementById("results-score")
 const finishedScore = document.getElementById("finished-score")
@@ -49,18 +48,18 @@ const playerInitials = document.getElementById("player-initials")
 const instructions = document.getElementById("instructions")
 
 const pageStart = () => {
-    start.onclick = startQuiz
+    start.onclick = startQuiz();
 }
 
 const startQuiz = () => {
-    interval = setInterval(() => {
+    let startingTime = setInterval(() => {
         startingTime--
         time.textContent = startingTime
         if(startingTime < 1) {
             endGame();
         }
     }, 1000)
-    displayQuestion()
+    displayQuestion();
 };
 
 const displayQuestion = () => {
@@ -69,7 +68,7 @@ const displayQuestion = () => {
     document.getElementsByTagName('h2')[0].style.display = 'none';
     document.getElementsByTagName('h3')[0].style.display = 'none';
 
-    const showQuestion = questions[questionIndex];
+    let showQuestion = questions[questionIndex];
     questionTitle.textContent = showQuestion.question;
     questionOptions.innerHTML = '';
 
@@ -140,4 +139,4 @@ const endGame = () => {
 }
 
 
-pageStart()
+pageStart();
